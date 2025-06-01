@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   { path: "/", element: <Index /> },
   { path: "/login", element: <Login /> },
   { path: "/admindashboard", element: <Admindashboard /> },
-  { path: "/admindashboard/manageallhosdetail", element: <Manageallhosdetail /> },
+  { path: "/admindashboard/manageallhosdetail", element: <Manageallhosdetails /> },
   { path: "/admindashboard/managerooms", element: <Managerooms /> },
   { path: "/admindashboard/managestudentapplication", element: <Managestudentapplication /> },
   { path: "/admindashboard/managecomplaints", element: <Managecomplaints /> },

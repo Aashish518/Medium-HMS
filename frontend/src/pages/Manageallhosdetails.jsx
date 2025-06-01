@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import "../pages-css/Manageallhosdetails.css";
 
-export const Manageallhosdetail = () => {
+export const Manageallhosdetails = () => {
 
     const [hosDetails, setHosDetails] = useState([]);
     const [newRule, setNewRule] = useState("");
