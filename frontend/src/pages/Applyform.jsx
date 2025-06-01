@@ -51,7 +51,7 @@ export const Applyform = () => {
         }
 
         try {
-            const response = await axios.post(`http://localhost:8000/api/student`, data);
+            const response = await axios.post(`${import.meta.env.VITE_BACK_LINK}/api/student`, data);
             alert("apply successfully!");
             navigate("/");
         } catch (error) {

@@ -14,7 +14,7 @@ export const Login=()=> {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`http://localhost:8000/api/login`, formData);
+            const res = await axios.post(`${import.meta.env.VITE_BACK_LINK}/api/login`, formData);
             if (res.data.user) {
                 localStorage.setItem("token", res.data.token);
                 navigate("/profile");

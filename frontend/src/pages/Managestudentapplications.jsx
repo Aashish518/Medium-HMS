@@ -11,7 +11,7 @@ export const Managestudentapplication = () => {
 
     const fetchStudents = async () => {
         try {
-            const res = await axios.get(`http://localhost:8000/api/students`);
+            const res = await axios.get(`${import.meta.env.VITE_BACK_LINK}/api/students`);
             const studentsNotInMerit = res.data.students.filter(
                 (student) => student.merit_status !== "in_merit"
             );
@@ -48,7 +48,7 @@ export const Managestudentapplication = () => {
             const ids = filteredStudents.map(student => student._id);
             console.log("Sending IDs:", ids);
 
-            await axios.put(`http://localhost:8000/api/students`, {
+            await axios.put(`${import.meta.env.VITE_BACK_LINK}/api/students`, {
                 ids: ids
             });
 

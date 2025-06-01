@@ -13,7 +13,7 @@ export const Managerooms = () => {
 
     const fetchRooms = async () => {
         try {
-            const res = await axios.get(`http://localhost:8000/api/getrooms`);
+            const res = await axios.get(`${import.meta.env.VITE_BACK_LINK}/api/getrooms`);
             setFloors(res.data.rooms);
         } catch (error) {
             console.error(error);
@@ -31,7 +31,7 @@ export const Managerooms = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(`http://localhost:8000/api/addrooms`, formData);
+            await axios.post(`${import.meta.env.VITE_BACK_LINK}/api/addrooms`, formData);
             fetchRooms();
             setFormData({
                 floor_number: '',
@@ -46,7 +46,7 @@ export const Managerooms = () => {
 
     const handleDelete = async (floorid, roomid) => {
         try {
-            await axios.delete(`http://localhost:8000/api/${floorid}/${roomid}/deleterooms`);
+            await axios.delete(`${import.meta.env.VITE_BACK_LINK}/api/${floorid}/${roomid}/deleterooms`);
             fetchRooms();
         } catch (error) {
             console.error(error);

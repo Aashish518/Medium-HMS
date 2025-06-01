@@ -11,7 +11,7 @@ export const Complaints = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`http://localhost:8000/api/complaint`,
+            const res = await axios.post(`${import.meta.env.VITE_BACK_LINK}/api/complaint`,
                 { complaint_text: complaintText },  
                 {
                     headers: {
@@ -31,7 +31,7 @@ export const Complaints = () => {
 
     const fetchComplaints = async () => {
         try {
-            const res = await axios.get(`http://localhost:8000/api/complaint`, {
+            const res = await axios.get(`${import.meta.env.VITE_BACK_LINK}/api/complaint`, {
                 headers: {
                     authorization: `Bearer ${token}`,
                 },

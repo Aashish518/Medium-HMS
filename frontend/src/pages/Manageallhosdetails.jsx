@@ -14,7 +14,7 @@ export const Manageallhosdetail = () => {
 
     const fetchHosDetails = async () => {
         try {
-            const res = await axios.get(`http://localhost:8000/api/getallhosdetails`);
+            const res = await axios.get(`${import.meta.env.VITE_BACK_LINK}/api/getallhosdetails`);
             setHosDetails(res.data.allhosdetails);
         } catch (error) {
             console.error(error);
@@ -28,7 +28,7 @@ export const Manageallhosdetail = () => {
     const handleAddRule = async () => {
         if (!newRule) return alert("Please enter a rule.");
         try {
-            await axios.post(`http://localhost:8000/api/rules`, { rule: newRule });
+            await axios.post(`${import.meta.env.VITE_BACK_LINK}/api/rules`, { rule: newRule });
             setNewRule("");
             fetchHosDetails();
         } catch (error) {
@@ -42,7 +42,7 @@ export const Manageallhosdetail = () => {
         formData.append("room_photo", selectedFile);
 
         try {
-            await axios.post(`http://localhost:8000/api/roomphotos`, formData);
+            await axios.post(`${import.meta.env.VITE_BACK_LINK}/api/roomphotos`, formData);
             setSelectedFile(null);
             fetchHosDetails();
         } catch (error) {
@@ -55,7 +55,7 @@ export const Manageallhosdetail = () => {
             return alert("Please fill all food details.");
 
         try {
-            await axios.post(`http://localhost:8000/api/fooddetails`, {
+            await axios.post(`${import.meta.env.VITE_BACK_LINK}/api/fooddetails`, {
                 day: newFoodDay,
                 meal_name: newMealName,
                 time: newMealTime,
@@ -73,7 +73,7 @@ export const Manageallhosdetail = () => {
 
     const handleDeleteRule = async (name) => {
         try {
-            await axios.delete(`http://localhost:8000/api/${name}/rules`);
+            await axios.delete(`${import.meta.env.VITE_BACK_LINK}/api/${name}/rules`);
             fetchHosDetails();
         } catch (error) {
             console.error(error);
@@ -82,7 +82,7 @@ export const Manageallhosdetail = () => {
 
     const handleDeleteRoomPhoto = async (name) => {
         try {
-            await axios.delete(`http://localhost:8000/api/${name}/roomphotos`);
+            await axios.delete(`${import.meta.env.VITE_BACK_LINK}/api/${name}/roomphotos`);
             fetchHosDetails();
         } catch (error) {
             console.error(error);
@@ -91,7 +91,7 @@ export const Manageallhosdetail = () => {
 
     const handleDeleteFoodDetail = async (name) => {
         try {
-            await axios.delete(`http://localhost:8000/api/${name}/fooddetails`);
+            await axios.delete(`${import.meta.env.VITE_BACK_LINK}/api/${name}/fooddetails`);
             fetchHosDetails();
         } catch (error) {
             console.error(error);

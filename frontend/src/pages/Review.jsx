@@ -26,7 +26,7 @@ export const Review = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:8000/api/review', {
+            await axios.post(`http://localhost:8000/api/review`, {
                 userId: userId, 
                 comment: comment
             });

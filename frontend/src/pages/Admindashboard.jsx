@@ -34,7 +34,7 @@ export const Admindashboard = () => {
 
     const handleUpdateGuideline = async () => {
         try {
-            await axios.put("http://localhost:8000/api/guideline", guideline);
+            await axios.put(`${import.meta.env.VITE_BACK_LINK}/api/guideline`, guideline);
             alert("Guideline updated successfully!");
         } catch (err) {
             console.error("Update failed:", err.response?.data?.message);
@@ -44,7 +44,7 @@ export const Admindashboard = () => {
 
     const handleDeleteGuideline = async() => {
         try {
-            await axios.delete("http://localhost:8000/api/guideline");
+            await axios.delete(`${import.meta.env.VITE_BACK_LINK}/api/guideline`);
             alert("Guideline delete successfully!");
         } catch (err) {
             console.error("delete failed:", err.response?.data?.message);

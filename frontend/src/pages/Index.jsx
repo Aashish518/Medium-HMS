@@ -16,7 +16,7 @@ export const Index = () => {
     
     const fetchGuideline = async () => {
             try {
-                const res = await axios.get("http://localhost:8000/api/guideline");
+                const res = await axios.get(`${import.meta.env.VITE_BACK_LINK}/api/guideline`);
                 setGuideline(res.data);
             } catch (err) {
                 console.error("Failed to fetch guideline:", err.response?.data?.message);
@@ -25,7 +25,7 @@ export const Index = () => {
 
     const fetchReviews = async () => {
             try {
-                const res = await axios.get(`http://localhost:8000/api/allreview`);
+                const res = await axios.get(`${import.meta.env.VITE_BACK_LINK}/api/allreview`);
                 setReviews(res.data);
             } catch (err) {
                 console.error('Error fetching reviews:', err.message);
@@ -39,7 +39,7 @@ export const Index = () => {
 
     const fetchHostelDetails = async () => {
         try {
-            const res = await axios.get("http://localhost:8000/api/getallhosdetails");
+            const res = await axios.get(`${import.meta.env.VITE_BACK_LINK}/api/getallhosdetails`);
             const data = res.data.allhosdetails[0];
 
             if (data) {

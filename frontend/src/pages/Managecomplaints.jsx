@@ -7,7 +7,7 @@ export const Managecomplaints = () => {
 
     const fetchComplaints = async () => {
         try {
-            const res = await axios.get(`http://localhost:8000/api/getallcomplaints`);
+            const res = await axios.get(`${import.meta.env.VITE_BACK_LINK}/api/getallcomplaints`);
             setComplaints(res.data.complaints);
         } catch (error) {
             console.error(error);
@@ -16,7 +16,7 @@ export const Managecomplaints = () => {
 
     const handleStatusChange = async (id) => {
         try {
-            await axios.put(`http://localhost:8000/api/${id}/complaint`);
+            await axios.put(`${import.meta.env.VITE_BACK_LINK}/api/${id}/complaint`);
             fetchComplaints();
         } catch (error) {
             console.error(error);

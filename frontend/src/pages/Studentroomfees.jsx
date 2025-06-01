@@ -38,7 +38,7 @@ export const Studentroomfees = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.put(`http://localhost:8000/api/updaterooms`, roomForm);
+            const response = await axios.put(`${import.meta.env.VITE_BACK_LINK}/api/updaterooms`, roomForm);
 
             alert("Room allocated successfully!");
         } catch (error) {
@@ -52,7 +52,7 @@ export const Studentroomfees = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post(`http://localhost:8000/api/fees`, feeForm);
+            const response = await axios.post(`${import.meta.env.VITE_BACK_LINK}/api/fees`, feeForm);
 
             alert("Fee added successfully:", response.data);
             navigate("/admindashboard");

@@ -16,7 +16,7 @@ export const Profile = () => {
 
     const getuserdata = async() => {
         try{
-            const res = await axios.get(`http://localhost:8000/api/getuser`, {
+            const res = await axios.get(`${import.meta.env.VITE_BACK_LINK}/api/getuser`, {
                 headers: {
                     authorization: `Bearer ${token}`,
                 },

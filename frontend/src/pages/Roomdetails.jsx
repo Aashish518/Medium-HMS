@@ -7,7 +7,7 @@ export const Roomdetails = () => {
 
     const fetchRooms = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/getrooms`);
+            const response = await axios.get(`${import.meta.env.VITE_BACK_LINK}/api/getrooms`);
             setFloors(response.data.rooms);
         } catch (error) {
             console.error(error);

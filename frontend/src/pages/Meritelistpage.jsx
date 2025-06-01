@@ -12,7 +12,7 @@ export const Meritelistpage = () => {
 
     const getuserdata = async() => {
             try{
-                const res = await axios.get(`http://localhost:8000/api/getuser`, {
+                const res = await axios.get(`${import.meta.env.VITE_BACK_LINK}/api/getuser`, {
                     headers: {
                         authorization: `Bearer ${token}`,
                     },
@@ -28,7 +28,7 @@ export const Meritelistpage = () => {
 
     const fetchStudents = async () => {
         try {
-            const res = await axios.get(`http://localhost:8000/api/students`);
+            const res = await axios.get(`${import.meta.env.VITE_BACK_LINK}/api/students`);
             const meritStudents = res.data.students.filter(
                 (student) => student.merit_status === 'in_merit'
             );

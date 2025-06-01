@@ -65,7 +65,7 @@ export const Ragisteruser = () => {
                 formDataToSend.append(key, formData[key]);
             }
 
-            const response = await axios.post(`http://localhost:8000/api/register`,formDataToSend);
+            const response = await axios.post(`${import.meta.env.VITE_BACK_LINK}/api/register`,formDataToSend);
 
             if (response.data.user.role ==="student") {
                 alert("Student registered successfully!");
