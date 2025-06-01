@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../components-css/Slider.css';
 
 export const Slider = () => {
-    const images = ['/a.jpg', '/b.jpg', '/c.jpg'];
+    const images = ['/photo1.jpg', '/photo2.jpg', '/photo3.jpg','/photo4.jpg'];
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
