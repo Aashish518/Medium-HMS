@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import "../pages-css/ManageComplaints.css";
+import "../pages-css/Managecomplaints.css";
 
 export const Managecomplaints = () => {
     const [complaints, setComplaints] = useState([]);
