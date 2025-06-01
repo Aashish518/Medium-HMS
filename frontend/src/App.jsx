@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Index } from "./pages/Index";
 import { Login } from "./pages/Login";
 import { Admindashboard } from "./pages/Admindashboard";
-import { Manageallhosdetail } from "./pages/Manageallhosdetails";
+import { Manageallhosdetails } from "./pages/Manageallhosdetails";
 import { Profile } from "./pages/Profile";
 import { Managerooms } from "./pages/Managerooms";
 import { Roomdetails } from "./pages/Roomdetails";
