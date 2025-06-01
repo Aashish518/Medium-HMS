@@ -3,7 +3,6 @@ import axios from "axios";
 import "../pages-css/Manageallhosdetails.css";
 
 export const Manageallhosdetails = () => {
-
     const [hosDetails, setHosDetails] = useState([]);
     const [newRule, setNewRule] = useState("");
     const [selectedFile, setSelectedFile] = useState(null);
@@ -36,7 +35,7 @@ export const Manageallhosdetails = () => {
         }
     }
 
-    const handleAddRoomPhoto = async (id) => {
+    const handleAddRoomPhoto = async () => {
         if (!selectedFile) return alert("Please select a photo.");
         const formData = new FormData();
         formData.append("room_photo", selectedFile);
@@ -100,6 +99,8 @@ export const Manageallhosdetails = () => {
 
     return (
         <div className="manageallhosdetail-container">
+
+            {/* Data display */}
             {hosDetails.length === 0 ? (
                 <p className="manageallhosdetail-nodata">No hostel details found.</p>
             ) : (
@@ -108,17 +109,12 @@ export const Manageallhosdetails = () => {
                         <h3 className="manageallhosdetail-title">Hostel Rules:</h3>
                         <ul className="manageallhosdetail-list">
                             {detail.hostel_rules.map((rule, idx) => (
-                                <li key={idx}>{rule}<button onClick={() => handleDeleteRule(rule)}>Delete</button></li>
+                                <li key={idx}>
+                                    {rule}
+                                    <button onClick={() => handleDeleteRule(rule)}>Delete</button>
+                                </li>
                             ))}
                         </ul>
-                        <div className="manageallhosdetail-inline">
-                            <input
-                                value={newRule}
-                                onChange={(e) => setNewRule(e.target.value)}
-                                placeholder="Add rule"
-                            />
-                            <button onClick={handleAddRule}>Add Rule</button>
-                        </div>
 
                         <h3 className="manageallhosdetail-title">Room Photos:</h3>
                         <div className="manageallhosdetail-photos">
@@ -132,13 +128,6 @@ export const Manageallhosdetails = () => {
                                     <button onClick={() => handleDeleteRoomPhoto(idx)}>Delete</button>
                                 </div>
                             ))}
-                        </div>
-                        <div className="manageallhosdetail-inline">
-                            <input
-                                type="file"
-                                onChange={(e) => setSelectedFile(e.target.files[0])}
-                            />
-                            <button onClick={handleAddRoomPhoto}>Add Photo</button>
                         </div>
 
                         <h3 className="manageallhosdetail-title">Food Details:</h3>
@@ -157,32 +146,56 @@ export const Manageallhosdetails = () => {
                                 </li>
                             ))}
                         </ul>
-                        <div className="manageallhosdetail-foodform">
-                            <input
-                                value={newFoodDay}
-                                onChange={(e) => setNewFoodDay(e.target.value)}
-                                placeholder="Day"
-                            />
-                            <input
-                                value={newMealName}
-                                onChange={(e) => setNewMealName(e.target.value)}
-                                placeholder="Meal Name"
-                            />
-                            <input
-                                value={newMealTime}
-                                onChange={(e) => setNewMealTime(e.target.value)}
-                                placeholder="Time"
-                            />
-                            <input
-                                value={newMealMenu}
-                                onChange={(e) => setNewMealMenu(e.target.value)}
-                                placeholder="Menu (comma separated)"
-                            />
-                            <button onClick={handleAddFoodDetail}>Add Food</button>
-                        </div>
                     </div>
                 ))
             )}
+
+            {/* Always show Add Sections */}
+            <div className="manageallhosdetail-card">
+                <h3 className="manageallhosdetail-title">Add Hostel Rule:</h3>
+                <div className="manageallhosdetail-inline">
+                    <input
+                        value={newRule}
+                        onChange={(e) => setNewRule(e.target.value)}
+                        placeholder="Add rule"
+                    />
+                    <button onClick={handleAddRule}>Add Rule</button>
+                </div>
+
+                <h3 className="manageallhosdetail-title">Add Room Photo:</h3>
+                <div className="manageallhosdetail-inline">
+                    <input
+                        type="file"
+                        onChange={(e) => setSelectedFile(e.target.files[0])}
+                    />
+                    <button onClick={handleAddRoomPhoto}>Add Photo</button>
+                </div>
+
+                <h3 className="manageallhosdetail-title">Add Food Details:</h3>
+                <div className="manageallhosdetail-foodform">
+                    <input
+                        value={newFoodDay}
+                        onChange={(e) => setNewFoodDay(e.target.value)}
+                        placeholder="Day"
+                    />
+                    <input
+                        value={newMealName}
+                        onChange={(e) => setNewMealName(e.target.value)}
+                        placeholder="Meal Name"
+                    />
+                    <input
+                        value={newMealTime}
+                        onChange={(e) => setNewMealTime(e.target.value)}
+                        placeholder="Time"
+                    />
+                    <input
+                        value={newMealMenu}
+                        onChange={(e) => setNewMealMenu(e.target.value)}
+                        placeholder="Menu (comma separated)"
+                    />
+                    <button onClick={handleAddFoodDetail}>Add Food</button>
+                </div>
+            </div>
         </div>
     );
 };
