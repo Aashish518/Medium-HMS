@@ -1,0 +1,41 @@
+/* Gallery container styling */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* Individual photo card */
+.card {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Optional hover zoom effect on images */
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* Mobile adjustments (optional but useful) */
+@media screen and (max-width: 480px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+}

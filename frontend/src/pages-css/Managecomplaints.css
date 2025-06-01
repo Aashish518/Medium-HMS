@@ -1,0 +1,89 @@
+.ManageComplaints-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.ManageComplaints-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.ManageComplaints-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ManageComplaints-card {
+    border: 1px solid #ddd;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ManageComplaints-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ManageComplaints-card p {
+    margin: 8px 0;
+    color: #444;
+}
+
+.ManageComplaints-card strong {
+    color: #222;
+}
+
+.ManageComplaints-button {
+    padding: 8px 16px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 12px;
+    font-size: 0.95rem;
+    transition: background 0.3s ease;
+}
+
+.ManageComplaints-button:hover {
+    background: #0056b3;
+}
+
+.ManageComplaints-select {
+    padding: 8px 12px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.ManageComplaints-empty {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    font-size: 1.1rem;
+    padding: 30px 0;
+}
+
+@media (max-width: 600px) {
+    .ManageComplaints-container {
+        padding: 16px;
+    }
+
+    .ManageComplaints-card {
+        padding: 16px;
+    }
+
+    .ManageComplaints-button {
+        width: 100%;
+        text-align: center;
+    }
+}

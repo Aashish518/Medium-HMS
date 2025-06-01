@@ -1,0 +1,121 @@
+/* MeritListPage.css */
+
+/* Container */
+.meritlistpage-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* Page Title */
+.meritlistpage-title {
+    text-align: center;
+    margin-bottom: 36px;
+    font-size: 36px;
+    color: #222;
+    font-weight: 600;
+}
+
+/* Search Box */
+.meritlistpage-searchbox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.meritlistpage-input {
+    padding: 12px 16px;
+    width: 280px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.meritlistpage-input:focus {
+    border-color: #0f62fe;
+}
+
+/* Primary Button */
+.meritlistpage-button {
+    padding: 12px 24px;
+    background-color: #0f62fe;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.meritlistpage-button:hover {
+    background-color: #0353e9;
+    transform: translateY(-2px);
+}
+
+/* List Grid */
+.meritlistpage-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+.meritlistpage-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #fafafa;
+    transition: box-shadow 0.3s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.meritlistpage-card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+
+/* Card Title */
+.meritlistpage-studentname {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #222;
+    font-weight: 500;
+}
+
+/* Card Details */
+.meritlistpage-detail {
+    font-size: 16px;
+    margin: 6px 0;
+    color: #555;
+}
+
+/* No Data Message */
+.meritlistpage-nodata {
+    text-align: center;
+    font-size: 18px;
+    color: #999;
+    margin-top: 40px;
+}
+
+/* Card Button */
+.meritlistpage-card .meritlistpage-button {
+    margin-top: 16px;
+    width: 100%;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .meritlistpage-input {
+        width: 100%;
+    }
+
+    .meritlistpage-button {
+        width: 100%;
+    }
+}

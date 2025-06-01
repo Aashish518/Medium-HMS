@@ -1,0 +1,106 @@
+.student-table-container {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fdfdfd;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.student-table-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.filter-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #0056b3;
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student-table th,
+.student-table td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.student-table th {
+    background-color: #f0f0f0;
+    font-size: 18px;
+}
+
+.student-table td {
+    font-size: 16px;
+}
+
+.filter-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-section input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.filter-section button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.filter-section button:hover {
+    background-color: #0056b3;
+}
+
+.filter-section label {
+    font-size: 16px;
+    margin-left: 12px;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .student-table-container {
+        padding: 16px;
+    }
+
+    .student-table th,
+    .student-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .student-table-container h2 {
+        font-size: 22px;
+    }
+}

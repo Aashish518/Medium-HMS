@@ -1,0 +1,83 @@
+.ComplaintsPage-container {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.ComplaintsPage-heading {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ComplaintsPage-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ComplaintsPage-input,
+.ComplaintsPage-textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.ComplaintsPage-textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.ComplaintsPage-button {
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ComplaintsPage-button:hover {
+    background-color: #0056b3;
+}
+
+.ComplaintsPage-list {
+    margin-top: 30px;
+}
+
+.ComplaintsPage-subheading {
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.ComplaintsPage-card {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #007BFF;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+.ComplaintsPage-card p {
+    margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+    .ComplaintsPage-container {
+        padding: 10px;
+    }
+
+    .ComplaintsPage-heading {
+        font-size: 24px;
+    }
+
+    .ComplaintsPage-button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

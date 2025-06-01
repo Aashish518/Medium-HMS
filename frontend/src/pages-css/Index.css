@@ -1,0 +1,171 @@
+/* Container styling */
+.index-rule-containner {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+/* Rules heading */
+.index-rule {
+    font-size: 2rem;
+    font-weight: 600;
+    color: aliceblue;
+    margin-bottom: 1rem;
+    background-color: #333;
+}
+
+/* Paragraphs under rules */
+.index-rule-containner p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+/* Rooms heading */
+.index-roomphoto {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem 0 1rem;
+    color: aliceblue;
+    background-color: #333;
+}
+
+/* Photo card container — 5 columns responsive */
+.photo-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* Individual photo cards */
+.photo-card {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Menu heading */
+.index-menu {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem 0 1rem;
+    color: aliceblue;
+    background-color: #333;
+}
+
+.index-review {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem 0 1rem;
+    color: aliceblue;
+    background-color: #333;
+}
+
+/* Menu card container - horizontal layout */
+.menu-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+/* Updated and interactive individual menu cards */
+.index-card {
+    background-color: #ffffff;
+    color: #333;
+    padding: 1rem;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    min-width: 200px;
+    max-width: 250px;
+}
+
+.index-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Day heading inside card */
+.index-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: #1976d2;
+    border-bottom: 2px solid #e3f2fd;
+    padding-bottom: 0.5rem;
+}
+
+/* Meal titles */
+.index-card strong {
+    display: block;
+    margin-top: 0.8rem;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Menu list inside card */
+.index-card ul {
+    padding-left: 1.2rem;
+    margin: 0.3rem 0 0.8rem;
+}
+
+.index-card li {
+    font-weight: 400;
+    font-size: 0.95rem;
+    margin: 0.2rem 0;
+    color: #555;
+    list-style-type: disc;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .index-rule {
+        font-size: 1.7rem;
+    }
+
+    .index-roomphoto,
+    .index-menu {
+        font-size: 1.7rem;
+    }
+
+    .index-card {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .index-rule {
+        font-size: 1.5rem;
+    }
+
+    .index-roomphoto,
+    .index-menu {
+        font-size: 1.5rem;
+    }
+
+    .index-card {
+        font-size: 0.95rem;
+        padding: 0.7rem 1.2rem;
+    }
+}

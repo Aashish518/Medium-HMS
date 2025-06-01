@@ -1,0 +1,57 @@
+.components-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+.components-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #222;
+}
+
+.components-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.components-input,
+.components-select {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.components-input:focus,
+.components-select:focus {
+    border-color: #007bff;
+}
+
+.components-button {
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.components-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 500px) {
+    .components-container {
+        padding: 15px;
+    }
+}

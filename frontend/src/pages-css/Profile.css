@@ -1,0 +1,214 @@
+/* === Layout === */
+.profilepage-container {
+    display: flex;
+    min-height: 100vh;
+    background: #f8fafc;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* === Sidebar === */
+.profilepage-sidebar {
+    width: 240px;
+    background: #0f172a;
+    color: #fff;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profilepage-logo {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #3b82f6;
+}
+
+.profilepage-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+}
+
+.profilepage-nav a,
+.profilepage-nav div {
+    padding: 12px 16px;
+    border-radius: 10px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.profilepage-nav a:hover,
+.profilepage-nav div:hover {
+    background: #1e293b;
+    color: #fff;
+    transform: translateX(4px);
+}
+
+/* === Main Content === */
+.profilepage-main {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilepage-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease;
+}
+
+.profilepage-card:hover {
+    transform: translateY(-4px);
+}
+
+/* === Header (Profile Image) === */
+.profilepage-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profilepage-picture {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border: 5px solid #3b82f6;
+    transition: all 0.4s ease;
+}
+
+.profilepage-picture:hover {
+    transform: scale(1.05);
+}
+
+/* === Form Styling === */
+.profilepage-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.profilepage-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profilepage-form-group label {
+    font-size: 15px;
+    color: #334155;
+    font-weight: 500;
+}
+
+.profilepage-form-group input {
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+.profilepage-form-group input:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+/* === Button === */
+.profilepage-button {
+    padding: 16px;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profilepage-button:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+}
+
+/* === Responsive (Tablet) === */
+@media (max-width: 768px) {
+    .profilepage-container {
+        flex-direction: column;
+    }
+
+    .profilepage-sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .profilepage-nav {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .profilepage-main {
+        padding: 30px 20px;
+    }
+
+    .profilepage-card {
+        padding: 30px;
+    }
+}
+
+/* === Mobile (300px - 480px) === */
+@media (max-width: 480px) {
+    .profilepage-sidebar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .profilepage-logo {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .profilepage-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .profilepage-nav a {
+        font-size: 14px;
+    }
+
+    .profilepage-main {
+        padding: 20px 15px;
+    }
+
+    .profilepage-card {
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .profilepage-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profilepage-button {
+        padding: 14px;
+        font-size: 15px;
+    }
+}

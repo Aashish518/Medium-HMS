@@ -1,0 +1,192 @@
+.manageallhosdetail-container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.manageallhosdetail-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    max-width: 480px;
+    flex: 1 1 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.manageallhosdetail-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.manageallhosdetail-list,
+.manageallhosdetail-foodlist {
+    padding-left: 18px;
+    margin: 0;
+    list-style-type: disc;
+}
+
+.manageallhosdetail-list li,
+.manageallhosdetail-foodlist li {
+    font-size: 15px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.manageallhosdetail-list button,
+.manageallhosdetail-foodlist button {
+    background: #dc3545;
+    border: none;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.manageallhosdetail-photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.manageallhosdetail-photo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.manageallhosdetail-photo {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.manageallhosdetail-photo-container button {
+    margin-top: 6px;
+    background: #dc3545;
+    border: none;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.manageallhosdetail-inline {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.manageallhosdetail-inline input {
+    flex: 1;
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.manageallhosdetail-inline button {
+    padding: 7px 12px;
+    background: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.manageallhosdetail-inline button:hover {
+    background: #0056b3;
+}
+
+.manageallhosdetail-foodform {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.manageallhosdetail-foodform input {
+    flex: 1 1 48%;
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.manageallhosdetail-foodform button {
+    flex: 1 1 100%;
+    padding: 9px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.manageallhosdetail-foodform button:hover {
+    background: #1e7e34;
+}
+
+.manageallhosdetail-nodata {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+}
+
+.manageallhosdetail-photos button {
+    margin-top: 6px;
+    background: #dc3545;
+    border: none;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .manageallhosdetail-card {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .manageallhosdetail-photo {
+        width: 90px;
+        height: 70px;
+    }
+
+    .manageallhosdetail-inline {
+        flex-direction: column;
+    }
+
+    .manageallhosdetail-inline input,
+    .manageallhosdetail-inline button {
+        width: 100%;
+    }
+
+    .manageallhosdetail-foodform input {
+        flex: 1 1 100%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .manageallhosdetail-title {
+        font-size: 20px;
+    }
+
+    .manageallhosdetail-photo {
+        width: 80px;
+        height: 60px;
+    }
+
+    .manageallhosdetail-list li,
+    .manageallhosdetail-foodlist li {
+        font-size: 14px;
+    }
+}
