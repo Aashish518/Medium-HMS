@@ -51,11 +51,11 @@ export const Profile = () => {
                 <h2 className="profilepage-logo">MyApp</h2>
                     <nav className="profilepage-nav">
                         {profile.role === "admin" ? (
-                            <a href="/admindashboard">Admin Dashboard</a>
+                            <a onClick={() => navigate("/admindashboard")}>Admin Dashboard</a>
                         ) : (
                             <>
                                 <div onClick={handlereview}>Review</div>
-                                <a href="/complaints">Complaints</a>
+                                    <a onClick={() => navigate("/complaints")}>Complaints</a>
                             </>
                         )}
                     </nav>
