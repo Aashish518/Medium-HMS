@@ -100,10 +100,7 @@ export const Manageallhosdetails = () => {
 
     return (
         <div className="manageallhosdetail-container">
-            {hosDetails.length === 0 ? (
-                <p className="manageallhosdetail-nodata">No hostel details found.</p>
-            ) : (
-                hosDetails.map((detail, index) => (
+                {hosDetails.map((detail, index) => (
                     <div className="manageallhosdetail-card" key={index}>
                         <h3 className="manageallhosdetail-title">Hostel Rules:</h3>
                         <ul className="manageallhosdetail-list">
@@ -182,7 +179,7 @@ export const Manageallhosdetails = () => {
                         </div>
                     </div>
                 ))
-            )}
+            }
         </div>
     );
 };
