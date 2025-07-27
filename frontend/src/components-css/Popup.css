@@ -1,25 +1,175 @@
-.open-admission-popup button{
+/* Import Google Fonts for consistency */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Enhanced Popup Button Styling */
+.open-admission-popup {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007b13;
-    color: #fff;
-    padding: 12px 18px;
-    border-radius: 8px;
-    font-size: 16px;
+    bottom: 30px;
+    right: 30px;
     z-index: 999;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    animation: slideIn 0.5s ease;
+    font-family: 'Poppins', sans-serif;
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateY(50px);
+.open-admission-popup button {
+    position: relative;
+    background: linear-gradient(135deg, #4fc3f7, #0288d1, #4fc3f7);
+    color: #ffffff;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(79, 195, 247, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    animation: slideInUp 0.6s ease-out, pulseGlow 2s ease-in-out infinite;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Shimmer effect overlay */
+.open-admission-popup button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+}
+
+.open-admission-popup button:hover::before {
+    left: 100%;
+}
+
+/* Button text styling */
+.open-admission-popup button span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Hover effects */
+.open-admission-popup button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(79, 195, 247, 0.4);
+    background: linear-gradient(135deg, #0288d1, #4fc3f7, #0288d1);
+}
+
+.open-admission-popup button:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(79, 195, 247, 0.3);
+}
+
+/* Focus state for accessibility */
+.open-admission-popup button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.3), 0 8px 25px rgba(79, 195, 247, 0.3);
+}
+
+/* Specific styling for admission button */
+.admission-button {
+    background: linear-gradient(135deg, #4fc3f7, #0288d1, #4fc3f7) !important;
+    animation: slideInUp 0.6s ease-out, bounce 2s ease-in-out infinite 1s !important;
+}
+
+.admission-button:hover {
+    background: linear-gradient(135deg, #0288d1, #4fc3f7, #0288d1) !important;
+    box-shadow: 0 15px 35px rgba(79, 195, 247, 0.5) !important;
+}
+
+/* Specific styling for merit list button */
+.merit-button {
+    background: linear-gradient(135deg, #4fc3f7, #0288d1, #4fc3f7) !important;
+    animation: slideInUp 0.6s ease-out, pulseGlow 2s ease-in-out infinite !important;
+}
+
+.merit-button:hover {
+    background: linear-gradient(135deg, #0288d1, #4fc3f7, #0288d1) !important;
+    box-shadow: 0 15px 35px rgba(79, 195, 247, 0.4) !important;
+}
+
+/* Slide in animation */
+@keyframes slideInUp {
+    0% {
+        transform: translateY(100px);
         opacity: 0;
     }
-
-    to {
+    50% {
+        transform: translateY(-10px);
+        opacity: 0.8;
+    }
+    100% {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+/* Pulse glow animation */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(79, 195, 247, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 25px rgba(79, 195, 247, 0.5), 0 0 20px rgba(79, 195, 247, 0.3);
+    }
+}
+
+/* Bounce animation for attention */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .open-admission-popup {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .open-admission-popup button {
+        padding: 14px 20px;
+        font-size: 14px;
+        border-radius: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .open-admission-popup {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .open-admission-popup button {
+        padding: 12px 16px;
+        font-size: 13px;
+        border-radius: 35px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .open-admission-popup button {
+        background: linear-gradient(135deg, #4fc3f7, #0288d1, #4fc3f7);
+        color: #ffffff;
+        box-shadow: 0 8px 25px rgba(79, 195, 247, 0.4);
+    }
+    
+    .open-admission-popup button:hover {
+        box-shadow: 0 15px 35px rgba(79, 195, 247, 0.5);
     }
 }

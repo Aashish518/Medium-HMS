@@ -1,192 +1,675 @@
+/* Import Google Fonts for consistency */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Enhanced Manage All Hostel Details */
 .manageallhosdetail-container {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: center;
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
+    min-height: 100vh;
 }
 
-.manageallhosdetail-card {
-    background: #fff;
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+    backdrop-filter: blur(20px);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(79, 195, 247, 0.2);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header-icon {
+    font-size: 3rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.header-text {
+    flex-grow: 1;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Error and Success Messages */
+.error-message,
+.success-message {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    padding: 20px;
-    max-width: 480px;
-    flex: 1 1 320px;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.error-message {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    animation: shake 0.5s ease-in-out;
+}
+
+.success-message {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.error-icon,
+.success-icon {
+    font-size: 1.2rem;
+}
+
+.error-text {
+    color: #ef4444;
+    font-weight: 500;
+}
+
+.success-text {
+    color: #10b981;
+    font-weight: 500;
+}
+
+/* Loading Section */
+.loading-section {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid #e2e8f0;
+    border-top: 4px solid #4fc3f7;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1.5rem;
+}
+
+.loading-text {
+    font-size: 1.5rem;
+    color: #475569;
+    font-weight: 500;
+}
+
+/* Empty Section */
+.empty-section {
+    text-align: center;
+    padding: 3rem 2rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.empty-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+}
+
+.empty-text {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Details Section */
+.details-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Enhanced Cards */
+.manageallhosdetail-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(79, 195, 247, 0.2);
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.manageallhosdetail-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(79, 195, 247, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.manageallhosdetail-card:hover::before {
+    left: 100%;
+}
+
+.manageallhosdetail-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.add-section {
+    grid-column: 1 / -1;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Card Headers */
+.card-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(79, 195, 247, 0.2);
 }
 
 .manageallhosdetail-title {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 8px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
+.title-icon {
+    font-size: 1.3rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Lists */
 .manageallhosdetail-list,
 .manageallhosdetail-foodlist {
-    padding-left: 18px;
+    list-style: none;
+    padding: 0;
     margin: 0;
-    list-style-type: disc;
 }
 
-.manageallhosdetail-list li,
-.manageallhosdetail-foodlist li {
-    font-size: 15px;
-    margin-bottom: 6px;
+.list-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    border: 1px solid rgba(79, 195, 247, 0.1);
+    transition: all 0.3s ease;
 }
 
-.manageallhosdetail-list button,
-.manageallhosdetail-foodlist button {
-    background: #dc3545;
+.list-item:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: rgba(79, 195, 247, 0.3);
+    transform: translateX(5px);
+}
+
+.item-text {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: #1e293b;
+    font-weight: 500;
+}
+
+.empty-list {
+    text-align: center;
+    color: #64748b;
+    font-style: italic;
+    padding: 1rem;
+}
+
+/* Delete Buttons */
+.manageallhosdetail-container .delete-button {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
     border: none;
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 4px;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10px;
     cursor: pointer;
-}
-
-.manageallhosdetail-photos {
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 3px 12px rgba(239, 68, 68, 0.3);
+    width: 120px !important;
+    justify-content: center;
+    flex: none !important;
 }
 
-.manageallhosdetail-photo-container {
+.manageallhosdetail-container .delete-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.manageallhosdetail-container .button-icon {
+    font-size: 1rem;
+}
+
+.manageallhosdetail-container .button-text {
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60px;
+}
+
+/* Photos Section */
+.manageallhosdetail-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.photo-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .manageallhosdetail-photo {
-    width: 100px;
-    height: 80px;
+    width: 120px;
+    height: 90px;
     object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid #ddd;
+    border-radius: 12px;
+    border: 2px solid rgba(79, 195, 247, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.manageallhosdetail-photo-container button {
-    margin-top: 6px;
-    background: #dc3545;
-    border: none;
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 4px;
-    cursor: pointer;
+.manageallhosdetail-photo:hover {
+    transform: scale(1.05);
+    border-color: rgba(79, 195, 247, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.manageallhosdetail-inline {
+.manageallhosdetail-container .photo-delete {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    width: 120px !important;
+    flex: none !important;
+}
+
+/* Food Details */
+.food-item {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(79, 195, 247, 0.1);
+    transition: all 0.3s ease;
+}
+
+.food-item:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: rgba(79, 195, 247, 0.3);
+    transform: translateX(5px);
+}
+
+.food-header {
     display: flex;
-    gap: 10px;
-    margin-bottom: 14px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
 
-.manageallhosdetail-inline input {
+.food-day {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.meals-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.meal-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(79, 195, 247, 0.1);
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.meal-item:last-child {
+    border-bottom: none;
+}
+
+.meal-name {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.meal-time {
+    color: #64748b;
+    margin: 0 0.5rem;
+}
+
+.meal-menu {
+    color: #64748b;
+}
+
+/* Add Section */
+.add-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.add-section-item {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(79, 195, 247, 0.2);
+    transition: all 0.3s ease;
+}
+
+.add-section-item:hover {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(79, 195, 247, 0.4);
+}
+
+.add-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.add-icon {
+    font-size: 1.1rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Form Elements */
+.input-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.form-input {
     flex: 1;
-    padding: 7px 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    border: 2px solid rgba(79, 195, 247, 0.2);
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #1e293b;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
 }
 
-.manageallhosdetail-inline button {
-    padding: 7px 12px;
-    background: #007bff;
+.form-input::placeholder {
+    color: #94a3b8;
+    font-style: italic;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #4fc3f7;
+    box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.1);
+    background: rgba(255, 255, 255, 1);
+}
+
+.form-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.file-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid rgba(79, 195, 247, 0.2);
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #1e293b;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.file-input:focus {
+    outline: none;
+    border-color: #4fc3f7;
+    box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.1);
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Add Buttons */
+.add-button {
+    background: linear-gradient(135deg, #4fc3f7, #0288d1);
     border: none;
-    color: #fff;
-    border-radius: 5px;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
-}
-
-.manageallhosdetail-inline button:hover {
-    background: #0056b3;
-}
-
-.manageallhosdetail-foodform {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
+    position: relative;
+    overflow: hidden;
 }
 
-.manageallhosdetail-foodform input {
-    flex: 1 1 48%;
-    padding: 7px 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.add-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
 }
 
-.manageallhosdetail-foodform button {
-    flex: 1 1 100%;
-    padding: 9px;
-    background: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.add-button:hover::before {
+    left: 100%;
 }
 
-.manageallhosdetail-foodform button:hover {
-    background: #1e7e34;
+.add-button:hover:not(:disabled) {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(79, 195, 247, 0.4);
 }
 
-.manageallhosdetail-nodata {
-    text-align: center;
-    font-size: 18px;
-    color: #888;
+.add-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
 }
 
-.manageallhosdetail-photos button {
-    margin-top: 6px;
-    background: #dc3545;
-    border: none;
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 4px;
-    cursor: pointer;
+.add-button.submitting {
+    background: linear-gradient(135deg, #64748b, #475569);
+}
+
+.add-button.full-width {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Food Form */
+.food-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-3px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .manageallhosdetail-container {
+        padding: 1.5rem;
+    }
+    
+    .details-section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .manageallhosdetail-card {
-        max-width: 100%;
-        flex: 1 1 100%;
+    .manageallhosdetail-container {
+        padding: 1rem;
     }
-
-    .manageallhosdetail-photo {
-        width: 90px;
-        height: 70px;
+    
+    .page-header {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
     }
-
-    .manageallhosdetail-inline {
+    
+    .header-content {
         flex-direction: column;
+        text-align: center;
+        gap: 1rem;
     }
-
-    .manageallhosdetail-inline input,
-    .manageallhosdetail-inline button {
-        width: 100%;
+    
+    .page-title {
+        font-size: 2rem;
     }
-
-    .manageallhosdetail-foodform input {
-        flex: 1 1 100%;
+    
+    .manageallhosdetail-card {
+        padding: 1.5rem;
+    }
+    
+    .input-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .manageallhosdetail-photos {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    
+    .manageallhosdetail-photo {
+        width: 100px;
+        height: 75px;
     }
 }
 
-
 @media (max-width: 480px) {
-    .manageallhosdetail-title {
-        font-size: 20px;
+    .manageallhosdetail-container {
+        padding: 0.75rem;
     }
-
+    
+    .page-header {
+        padding: 1rem;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .manageallhosdetail-card {
+        padding: 1rem;
+    }
+    
+    .manageallhosdetail-title {
+        font-size: 1.3rem;
+    }
+    
+    .add-title {
+        font-size: 1.1rem;
+    }
+    
+    .manageallhosdetail-photos {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    
     .manageallhosdetail-photo {
         width: 80px;
         height: 60px;
-    }
-
-    .manageallhosdetail-list li,
-    .manageallhosdetail-foodlist li {
-        font-size: 14px;
     }
 }

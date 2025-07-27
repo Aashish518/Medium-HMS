@@ -24,7 +24,6 @@ exports.addrules = async (req, res) => {
     }
 };
 
-
 exports.addroomphoto = async (req, res) => {
     try {
         const imagePath = req.file.path; 
@@ -48,7 +47,6 @@ exports.addroomphoto = async (req, res) => {
         res.status(500).json({ message: "Server error during uploading photo" });
     }
 };
-  
 
 exports.addfooddetail = async (req, res) => {
     try {
@@ -107,9 +105,6 @@ exports.addfooddetail = async (req, res) => {
     }
 };
 
-
-
-
 exports.deleterule = async (req, res) => {
     try {
         const { name } = req.params;
@@ -155,8 +150,6 @@ exports.deleteroomphoto = async (req, res) => {
         res.status(500).json({ message: "Server error during deleting photo" });
     }
 };
-  
-  
 
 exports.deletefooddetail = async (req, res) => {
     try {
@@ -182,7 +175,6 @@ exports.deletefooddetail = async (req, res) => {
         res.status(500).json({ message: "Server error during deleting food detail" });
     }
 };
-  
 
 exports.getallhosdetails = async(req,res) => {
     try {

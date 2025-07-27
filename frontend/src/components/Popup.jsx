@@ -6,6 +6,7 @@ import axios from 'axios';
 export const Popup = () => {
     const navigate = useNavigate();
     const [guideline, setGuideline] = useState(null);
+    const [isVisible, setIsVisible] = useState(false);
 
     const fetchGuideline = async () => {
         try {
@@ -18,6 +19,12 @@ export const Popup = () => {
 
     useEffect(() => {
         fetchGuideline();
+        // Add a small delay to make the popup appear smoothly
+        const timer = setTimeout(() => {
+            setIsVisible(true);
+        }, 1000);
+        
+        return () => clearTimeout(timer);
     }, []);
 
     const isWithinPeriod = (startDateStr, endDateStr) => {
@@ -39,17 +46,37 @@ export const Popup = () => {
         return isWithinPeriod(meritPeriod.startDate, meritPeriod.endDate);
     };
 
+    const handleAdmissionClick = () => {
+        navigate("/applyform");
+    };
+
+    const handleMeritListClick = () => {
+        navigate("/meritelistpage");
+    };
+
     return (
         <>
             <div className="open-admission-popup">
-                {guideline && isAdmissionOpen() && (
-                    <button onClick={() => navigate("/applyform")}>
-                        🎉 Admissions Open — Apply Now!
+                {guideline && isAdmissionOpen() && isVisible && (
+                    <button 
+                        onClick={handleAdmissionClick}
+                        className="admission-button"
+                        aria-label="Apply for admission"
+                    >
+                        <span>
+                            🎉 Admissions Open — Apply Now!
+                        </span>
                     </button>
                 )}
-                {guideline && isMeritListOpen() && (
-                    <button onClick={() => navigate("/meritelistpage")}>
-                        📜 Merit List — View Now!
+                {guideline && isMeritListOpen() && isVisible && (
+                    <button 
+                        onClick={handleMeritListClick}
+                        className="merit-button"
+                        aria-label="View merit list"
+                    >
+                        <span>
+                            📜 Merit List — View Now!
+                        </span>
                     </button>
                 )}
             </div>
